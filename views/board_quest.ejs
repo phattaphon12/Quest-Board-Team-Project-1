@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../public/css/board_quest.css">
+        <title>Quest Board</title>
+    </head>
+    <body>
+        <a class="b_role" href="/">
+            <h1>Quest</h1>
+        </a>
+        <div class="container" ID="reference">
+            <div class="frame">
+                <a href="/add"><button class="add_quest" >+ Add Quest</button></a>
+                <% Object.values(quests).forEach(function(item){%>
+                <div class="edit_quest">
+                    <div class="more_quest">
+                        <div class="head"><%=item.title%></div>
+                        <a href="/delete/<%=item._id%>"><button class="btn delete"  onclick="return confirm('Do you want to delete this data ?')">Delete</button></a>
+                        <form action="/edit" method="post">
+                            <input type="hidden" name="edit_id" value="<%=item._id%>">
+                            <button class="btn edit">Edit</button>
+                        </form>
+                </div>
+                <%})%>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../public/css/add_quest.css">
+        <title>Add Quest</title>
+    </head>
+    <body>
+        <h1>Quest</h1>
+        <!-- <div class="gbtn setbottom"><button type="submit" class="btn btn-primary" onclick="window.location.href='/manageQuest'">Return</button></div> -->
+        <div class="container" ID="reference">
+            <div class="frame">
+                <form action="/input" method="post">
+                    <table>
+                        <tr class="d name_quest">
+                            <td class="headder1">Name Quest</td>
+                            <td class="headder2"><input type="text" required name="title"></td>
+                        </tr>
+                        <tr class="d contract_quest">
+                            <td class="headder1">Contact</td>
+                            <td class="headder2"><input type="text" required name="contact"></td>
+                        </tr>
+                        <tr class="d details_quest">
+                            <td class="headder1">Details</td>
+                            <td class="headder2"><textarea name="description"  cols="30" rows="3"></textarea></td>
+                        </tr>
+                    </table>
+                    <div class="gbtn">
+                        <button type="submit" class="btn assign">Assign</button>
+                    </div>
+                </form>
+                    <button type="submit" class="btn2 btn-primary setbottom return" onclick="window.location.href='/manageQuest'"> < </button>
+            </div>
+        </div>
+    </body>
+</html>

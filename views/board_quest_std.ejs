@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../public/css/board_quest.css">
+        <title>Quest Board</title>
+    </head>
+    <body>
+        <a class="b_role" href="/">
+            <h1>Quest</h1>
+        </a>
+        <div class="container" id="reference">
+            <div class="frame">
+                <% Object.values(quests).forEach(function(item){%>
+                    <div class="edit_quest">
+                        <div class="more_quest">
+                            <div class="head"><%=item.title%></div>
+                            <form action="/details" method="post">
+                                <input type="hidden" name="details_id" value="<%=item._id%>">
+                                <button class="btn edit">Details</button>
+                            </form>
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../public/css/add_quest.css">
+        <title>Details</title>
+    </head>
+    <body>
+        <h1>Quest</h1>
+        <div class="container" ID="reference">
+            <div class="frame">
+                    <form  method="post" action="/update">
+                    <input type="hidden" value="<%=quests._id%>" name="update_id">
+                    <table style="height: 50%;">
+                        <tr class="d1 name_quest">
+                            <td class="headder1">Name Quest</td>
+                            <td class="headder3"><div class="n1"><%=quests.title%></div></td>
+                        </tr>
+                        <tr class="d1 contract_quest">
+                            <td class="headder1">Contact</td>
+                            <td class="headder3"><div class="n1"><%=quests.contact%></div></td>
+                        </tr>
+                        <tr class="d1 details_quest">
+                            <td class="headder1">Details</td>
+                            <td class="headder3"><div class="n1"><%=quests.description%></div></td>
+                        </tr>
+                    </table>
+                </form>
+                <button type="submit" class="btn2 btn-primary setbottom return" onclick="window.location.href='/board_qstd'"> < </button>
+            </div>
+        </div>
+    </body>
+</html>
