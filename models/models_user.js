@@ -11,18 +11,18 @@ mongoose.connect(dbUrl,{
 }).catch(err=>console.log(err))
 
 //design schema
-let questSchema = mongoose.Schema({
-    title:String,
-    description:String,
+let user = mongoose.Schema({
+    name:String,
+    password:String,
     contact:String
 })
 
 //create model 
-let quest_product=mongoose.model("Quests",questSchema)//mongoose.model(Collection name in MongoDB,Schema)\
+let User=mongoose.model("data_User",user)//mongoose.model(Collection name in MongoDB,Schema)\
 
 
 //export model
-module.exports = quest_product
+module.exports = User
 
 //design function for save data
 module.exports.saveQuest=function(model,data){

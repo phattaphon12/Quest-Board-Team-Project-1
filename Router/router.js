@@ -2,6 +2,7 @@
 const express=require('express')
 const router=express.Router()
 const Quest=require('../models/quest_product')//use model
+const User=require('../models/models_user')
 const mongoose=require('mongoose')
 
 router.get('/',(req,res)=>{
