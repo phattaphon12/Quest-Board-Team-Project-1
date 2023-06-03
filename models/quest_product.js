@@ -14,7 +14,8 @@ mongoose.connect(dbUrl,{
 let questSchema = mongoose.Schema({
     title:String,
     description:String,
-    contact:String
+    contact:String,
+    point:Number
 })
 
 //create model 

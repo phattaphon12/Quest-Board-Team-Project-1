@@ -28,7 +28,8 @@ router.post('/input',(req,res)=>{//post method use body to show the data
     let data=new Quest({
         title:req.body.title,
         description:req.body.description,
-        contact:req.body.contact
+        contact:req.body.contact,
+        point:req.body.point
     })
     console.log(data)
     Quest.saveQuest(data)
@@ -67,7 +68,8 @@ router.post('/update',(req,res)=>{
     let data={
         title:req.body.title,
         description:req.body.description,
-        contact:req.body.contact
+        contact:req.body.contact,
+        point:req.body.point
     }
     console.log(update_id)
     console.log(data)
