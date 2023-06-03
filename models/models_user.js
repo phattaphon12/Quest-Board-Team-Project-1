@@ -14,7 +14,8 @@ mongoose.connect(dbUrl,{
 let user = mongoose.Schema({
     name:String,
     password:String,
-    contact:String
+    contact:String,
+    exp_Coding:Number
 })
 
 //create model 
