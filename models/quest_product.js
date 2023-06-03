@@ -15,6 +15,7 @@ let questSchema = mongoose.Schema({
     title:String,
     description:String,
     contact:String,
+    category:String,
     point:Number
 })
 

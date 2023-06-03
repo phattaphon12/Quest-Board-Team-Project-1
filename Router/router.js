@@ -29,6 +29,7 @@ router.post('/input',(req,res)=>{//post method use body to show the data
         title:req.body.title,
         description:req.body.description,
         contact:req.body.contact,
+        category:req.body.category,
         point:req.body.point
     })
     console.log(data)
@@ -69,6 +70,7 @@ router.post('/update',(req,res)=>{
         title:req.body.title,
         description:req.body.description,
         contact:req.body.contact,
+        category:req.body.category,
         point:req.body.point
     }
     console.log(update_id)
