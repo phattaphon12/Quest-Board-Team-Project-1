@@ -24,6 +24,14 @@
                             <td class="headder1">Details</td>
                             <td class="headder2"><textarea name="description" value="" cols="30" rows="3"><%=quests.description%></textarea></td>
                         </tr>
+                        <tr class="d category_quest">
+                            <td class="headder1">Category</td>
+                            <td class="headder2"><input type="text" required name="category" value="<%=quests.category%>"></input></td>
+                        </tr>
+                        <tr class="d exp_quest">
+                            <td class="headder1">EXP</td>
+                            <td class="headder2"><input type="text" required name="exp" value="<%=quests.exp%>"></input></td>
+                        </tr>
                     </table>
                     <div class="gbtn">
                         <button type="submit" class="btn assign">Update</button>
