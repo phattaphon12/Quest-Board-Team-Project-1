@@ -2,10 +2,17 @@
 const express=require('express')
 const router=express.Router()
 const Quest=require('../models/quest_product')//use model
-const User=require('../models/models_user')
 const mongoose=require('mongoose')
 
 router.get('/',(req,res)=>{
+    res.render('login.ejs')
+})
+
+router.get('/register',(req,res)=>{
+    res.render('Register.ejs')
+})
+
+router.get('/role',(req,res)=>{
     res.render('role.ejs')
 })
 

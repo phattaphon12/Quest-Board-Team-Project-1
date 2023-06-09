@@ -12,6 +12,7 @@
 <body>
 
     <!-- field set -->
+
 <fieldset>
     <div class="container">
         <form id="msform">
@@ -24,22 +25,22 @@
         </form>
         <div class="main">
             <h1>Register</h1>
-            <form method="post">
+            <form method="post" action="/newuser">
                 <div class="txt-field">
-                    <input type="text" required>
+                    <input type="text" required name="First_name">
                     <label>First name</label>
                 </div>
                 <div class="txt-field">
-                    <input type="text" required>
+                    <input type="text" required name="Last_name">
                     <label>Last name</label>
                 </div>
                 <div class="txt-field">
-                    <input type="text" required>
+                    <input type="text" required name="nick_name">
                     <label>Nickname</label>
                 </div>
                 <input type="submit" name="next" class="submit action-button large" value="Next" />
                 <div class="singin-link">
-                    Do you have an account? <a href="login.html">Sign in</a>
+                    Do you have an account? <a href="/">Sign in</a>
                 </div>
             </form>
         </div>
@@ -57,21 +58,21 @@
             </form>
         <div class="main">
             <h1>Register</h1>
-            <form method="post" onsubmit="return validateForm()">
+            <form method="post" action="/newuser" onsubmit="return validateForm()">
                     <div class="txt-field">
-                        <input type="text" required>
+                        <input type="text" required name="Address">
                         <label>Address</label>
                     </div>
                     <div class="txt-field">
-                        <input type="tel" maxlength="10" required>
+                        <input type="tel" maxlength="10" required name="Phone_number">
                         <label>Phone number</label>
                     </div>
                     <div class="txt-field">
-                        <input type="text" required>
+                        <input type="text" required name="ID_Line">
                         <label>ID Line</label>
                     </div>
                     <div class="txt-field">
-                        <input type="text" required>
+                        <input type="text" required name="Other_Contact">
                         <label>Other Contact Chanel</label>
                 </div>
                 <!-- css button -->
@@ -80,7 +81,7 @@
                     <input type="submit" name="next" class="submit action-button small" value="Next" />
                   </div>
                   <div class="singin-link">
-                    Do you have an account? <a href="login.html">Sign in</a>
+                    Do you have an account? <a href="/">Sign in</a>
                 </div>
             </form>
         </div>
@@ -97,33 +98,34 @@
             </form>
         <div class="main">
             <h1>Register</h1>
-            <form method="post" onsubmit="return validateForm()">
+            <form method="post" action="/newuser" onsubmit="return validateForm()">
                     <div class="txt-field">
-                        <input type="email" required>
+                        <input type="email" required name="Email">
                         <label>Email</label>
                     </div>
                     <div class="txt-field">
-                        <input type="text" maxlength="30" required>
+                        <input type="text" maxlength="30" required name="Username">
                         <label>Username</label>
                     </div>
                     <div class="txt-field">
-                        <input type="password" required>
+                        <input type="password" required name="Password">
                         <label>Password</label>
                     </div>
                     <div class="txt-field">
-                        <input type="password" required>
+                        <input type="password" required name="Confirm_password">
                         <label>Confirm Password</label>
                     </div>
                 <!-- css button -->
                 <div class="button-container" id="page3">
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="submit" name="next" class="submit action-button small" value="Submit" />
+                    <input type="submit" name="next" class="submit action-button small" value="Submit " onclick="window.location.href='/role'" />
                   </div>
                   <div class="singin-link">
-                    Do you have an account? <a href="login.html">Sign in</a>
+                    Do you have an account? <a href="/">Sign in</a>
                 </div>
             </form>
         </div>
     </fieldset>
+
 </body>
 </html>
