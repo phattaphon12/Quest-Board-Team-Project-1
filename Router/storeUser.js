@@ -2,9 +2,12 @@ const express=require('express')
 const router2=express.Router()
 const User=require('../models/models_user')
 
+router2.get('/register',(req,res)=>{
+    res.render('Register.ejs')
+})
 
 router2.post('/newuser',(req,res)=>{//post method use body to show the data
-    if(req.body.password == req.body.confirmpassword){
+    
         let data=new User({
             First_name:req.body.First_name,
             Last_name:req.body.Last_name,
@@ -21,9 +24,6 @@ router2.post('/newuser',(req,res)=>{//post method use body to show the data
         console.log(data)
         User.saveUser(data)
         res.redirect('/')
-    }
-    
-    
     
 })
 

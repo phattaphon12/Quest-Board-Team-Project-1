@@ -8,9 +8,7 @@ router.get('/',(req,res)=>{
     res.render('login.ejs')
 })
 
-router.get('/register',(req,res)=>{
-    res.render('Register.ejs')
-})
+
 
 router.get('/role',(req,res)=>{
     res.render('role.ejs')

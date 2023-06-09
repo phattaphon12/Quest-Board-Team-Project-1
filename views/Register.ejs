@@ -12,20 +12,20 @@
 <body>
 
     <!-- field set -->
-
+<form method="post" action="/newuser">
 <fieldset>
     <div class="container">
-        <form id="msform">
+        
             <ul id="progressbar">
                 <li>Personal</li>
                 <li class="active">Contact</li>
                 <li class="active">Account</li>
             </ul>
         </div>
-        </form>
+        
         <div class="main">
             <h1>Register</h1>
-            <form method="post" action="/newuser">
+            
                 <div class="txt-field">
                     <input type="text" required name="First_name">
                     <label>First name</label>
@@ -42,23 +42,23 @@
                 <div class="singin-link">
                     Do you have an account? <a href="/">Sign in</a>
                 </div>
-            </form>
+            
         </div>
 
 </fieldset>
     <fieldset>
         <div class="container">
-            <form id="msform">
+            
                 <ul id="progressbar">
                     <li >Personal</li>
                     <li >Contact</li>
                     <li class="active">Account</li>
                 </ul>
             </div>
-            </form>
+            
         <div class="main">
             <h1>Register</h1>
-            <form method="post" action="/newuser" onsubmit="return validateForm()">
+            
                     <div class="txt-field">
                         <input type="text" required name="Address">
                         <label>Address</label>
@@ -83,22 +83,22 @@
                   <div class="singin-link">
                     Do you have an account? <a href="/">Sign in</a>
                 </div>
-            </form>
+            
         </div>
     </fieldset>
     <fieldset>
         <div class="container">
-            <form id="msform">
+           
                 <ul id="progressbar">
                     <li >Personal</li>
                     <li >Contact</li>
                     <li >Account</li>
                 </ul>
             </div>
-            </form>
+            
         <div class="main">
             <h1>Register</h1>
-            <form method="post" action="/newuser" onsubmit="return validateForm()">
+            
                     <div class="txt-field">
                         <input type="email" required name="Email">
                         <label>Email</label>
@@ -118,14 +118,14 @@
                 <!-- css button -->
                 <div class="button-container" id="page3">
                     <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="submit" name="next" class="submit action-button small" value="Submit " onclick="window.location.href='/role'" />
+                    <input type="submit" name="next" class="submit action-button small"  onclick="window.location.href='/role'" />
                   </div>
                   <div class="singin-link">
                     Do you have an account? <a href="/">Sign in</a>
                 </div>
-            </form>
+            
         </div>
     </fieldset>
-
+</form>
 </body>
 </html>
