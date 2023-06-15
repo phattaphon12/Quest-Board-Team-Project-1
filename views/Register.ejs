@@ -1,131 +1,148 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="../public/css/Register.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <!-- <script src="Register.js"></script> -->
-    <title>Login</title>
-</head>
-
-<body>
-
-    <!-- field set -->
-<form method="post" action="/newuser">
-<fieldset>
-    <div class="container">
+    <head>
+        <link rel="stylesheet" href="../public/css/login.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
         
-            <ul id="progressbar">
-                <li>Personal</li>
-                <li class="active">Contact</li>
-                <li class="active">Account</li>
-            </ul>
-        </div>
+        <title>Register</title>
+    </head>
+    <body>
+        <form method="post" action="/newuser">
+            <fieldset>
+                <div class="container" id="reference">
+                    <!-- <div id="progressbar">
+                        <div class="step active">Personal</div>
+                        <div class="step">Contract</div>
+                        <div class="step">Account</div>
+                    </div> -->
+                    <div class="frame">
+                        <h1>Register</h1>
+                        <form id="stepForm" onsubmit="return false;">
+                            <div class="input-frame form-step active step">
+                                <div class="input-frame2">
+                                    <div class="role-select">
+                                        <label class="con-radio">
+                                            <input class="s-role" type="radio" name="srole" value="std">Student
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="con-radio">
+                                            <input class="s-role" type="radio" name="srole" value="tea">Teacher
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="text" required name="First_name">
+                                        <label>First name</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="text" required name="Last_name">
+                                        <label>Last name</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="text" required name="Nick_name">
+                                        <label>Nickname</label>
+                                    </div>
+                                </div>
+                                <button class="btn" onclick="nextStep()">next</button>
+                                <div class="singup-link">
+                                    Do you have an account? <a href="/">Sign in</a>
+                                </div>
+                            </div>
+                            <div class="input-frame form-step step">
+                                <div class="input-frame2">
+                                    <div class="txt-field">
+                                        <input type="text" required name="Address">
+                                        <label>Address</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="tel" maxlength="10" required name="Phone_number">
+                                        <label>Phone number</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="text" required name="ID_Line">
+                                        <label>ID Line</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="text" required name="Other_Contact">
+                                        <label>Other Contact Chanel</label>
+                                    </div>
+                                </div>
+                                <div class="btnz">
+                                    <button class="btn2" onclick="backStep()">back</button>
+                                    <button class="btn2" onclick="nextStep()">next</button>
+                                </div>
+                                <div class="singup-link">
+                                    Do you have an account? <a href="/">Sign in</a>
+                                </div>
+                            </div>
+                            <div class="input-frame form-step step">
+                                <div class="input-frame2">
+                                    <div class="txt-field">
+                                        <input type="email" required name="Email">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="text" maxlength="30" required name="Username">
+                                        <label>Username</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="password" required name="Password">
+                                        <label>Password</label>
+                                    </div>
+                                    <div class="txt-field">
+                                        <input type="password" required name="Confirm_password">
+                                        <label>Confirm Password</label>
+                                    </div>
+                                </div>
+                                <div class="btnz">
+                                    <button class="btn2" onclick="backStep()">back</button>
+                                    <button class="btn2" onclick="submitForm()">submit</button>
+                                </div>
+                                <div class="singup-link">
+                                    Do you have an account? <a href="/">Sign in</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <script>
+            var currentStep = 0;
+            var formSteps = document.getElementsByClassName('form-step');
+            var steps = document.getElementsByClassName('step');
+            
+            function showStep(stepIndex) {
+              for (var i = 0; i < formSteps.length; i++) {
+                formSteps[i].style.display = 'none';
+                steps[i].classList.remove('active');
+              }
+          
+              formSteps[stepIndex].style.display = 'block';
+              steps[stepIndex].classList.add('active');
+            }
         
-        <div class="main">
-            <h1>Register</h1>
-            
-                <div class="txt-field">
-                    <input type="text" required name="First_name">
-                    <label>First name</label>
-                </div>
-                <div class="txt-field">
-                    <input type="text" required name="Last_name">
-                    <label>Last name</label>
-                </div>
-                <div class="txt-field">
-                    <input type="text" required name="nick_name">
-                    <label>Nickname</label>
-                </div>
-                <input type="submit" name="next" class="submit action-button large" value="Next" />
-                <div class="singin-link">
-                    Do you have an account? <a href="/">Sign in</a>
-                </div>
-            
-        </div>
+            function nextStep() {
+              if (currentStep < formSteps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+              }
+            }
 
-</fieldset>
-    <fieldset>
-        <div class="container">
-            
-                <ul id="progressbar">
-                    <li >Personal</li>
-                    <li >Contact</li>
-                    <li class="active">Account</li>
-                </ul>
-            </div>
-            
-        <div class="main">
-            <h1>Register</h1>
-            
-                    <div class="txt-field">
-                        <input type="text" required name="Address">
-                        <label>Address</label>
-                    </div>
-                    <div class="txt-field">
-                        <input type="tel" maxlength="10" required name="Phone_number">
-                        <label>Phone number</label>
-                    </div>
-                    <div class="txt-field">
-                        <input type="text" required name="ID_Line">
-                        <label>ID Line</label>
-                    </div>
-                    <div class="txt-field">
-                        <input type="text" required name="Other_Contact">
-                        <label>Other Contact Chanel</label>
-                </div>
-                <!-- css button -->
-                <div class="button-container" id="page2">
-                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="submit" name="next" class="submit action-button small" value="Next" />
-                  </div>
-                  <div class="singin-link">
-                    Do you have an account? <a href="/">Sign in</a>
-                </div>
-            
-        </div>
-    </fieldset>
-    <fieldset>
-        <div class="container">
-           
-                <ul id="progressbar">
-                    <li >Personal</li>
-                    <li >Contact</li>
-                    <li >Account</li>
-                </ul>
-            </div>
-            
-        <div class="main">
-            <h1>Register</h1>
-            
-                    <div class="txt-field">
-                        <input type="email" required name="Email">
-                        <label>Email</label>
-                    </div>
-                    <div class="txt-field">
-                        <input type="text" maxlength="30" required name="Username">
-                        <label>Username</label>
-                    </div>
-                    <div class="txt-field">
-                        <input type="password" required name="Password">
-                        <label>Password</label>
-                    </div>
-                    <div class="txt-field">
-                        <input type="password" required name="Confirm_password">
-                        <label>Confirm Password</label>
-                    </div>
-                <!-- css button -->
-                <div class="button-container" id="page3">
-                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="submit" name="next" class="submit action-button small"  onclick="window.location.href='/role'" />
-                  </div>
-                  <div class="singin-link">
-                    Do you have an account? <a href="/">Sign in</a>
-                </div>
-            
-        </div>
-    </fieldset>
-</form>
-</body>
+            function backStep() {
+                if (currentStep > 0) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            }
+        
+            function submitForm() {
+              // Perform form submission or validation here
+              alert('Form submitted successfully!');
+            }
+            showStep(currentStep);
+        </script>
+    </body>
 </html>
