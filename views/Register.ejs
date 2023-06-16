@@ -24,11 +24,11 @@
                                 <div class="input-frame2">
                                     <div class="role-select">
                                         <label class="con-radio">
-                                            <input class="s-role" type="radio" name="srole" value="std">Student
+                                            <input class="s-role" type="radio" name="Role" value="student">Student
                                             <span class="checkmark"></span>
                                         </label>
                                         <label class="con-radio">
-                                            <input class="s-role" type="radio" name="srole" value="tea">Teacher
+                                            <input class="s-role" type="radio" name="Role" value="teacher">Teacher
                                             <span class="checkmark"></span>
                                         </label>
                                     </div>
@@ -113,13 +113,12 @@
             var currentStep = 0;
             var formSteps = document.getElementsByClassName('form-step');
             var steps = document.getElementsByClassName('step');
-            
+
             function showStep(stepIndex) {
               for (var i = 0; i < formSteps.length; i++) {
                 formSteps[i].style.display = 'none';
                 steps[i].classList.remove('active');
               }
-          
               formSteps[stepIndex].style.display = 'block';
               steps[stepIndex].classList.add('active');
             }
@@ -137,7 +136,7 @@
                     showStep(currentStep);
                 }
             }
-        
+
             function submitForm() {
               // Perform form submission or validation here
               alert('Form submitted successfully!');

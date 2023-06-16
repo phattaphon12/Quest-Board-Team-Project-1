@@ -14,6 +14,10 @@ mongoose.connect(dbUrl,{
 
 //design schema
 const userSchema = new schema({
+    Role:{
+        type: String,
+        require:[true,'Please choose your role']
+    },
     First_name:{
         type: String,
         required:[true,'Please provide first name']
@@ -22,7 +26,7 @@ const userSchema = new schema({
         type: String,
         required:[true,'Please provide last name']
     },
-    nick_name:{
+    Nick_name:{
         type: String,
         required:[true,'Please provide nick name']
     },
